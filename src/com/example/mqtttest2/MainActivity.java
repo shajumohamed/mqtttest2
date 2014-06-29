@@ -30,10 +30,12 @@ public class MainActivity extends Activity {
     private Button button;
     private Button button2;
     private Button button3;
+    private Button btnManageSub;
     private EditText editText1;
     private EditText editText2;
     private EditText editText3;
     private MQTTService s;
+    static final String TAG="MainActivity";
 
      @SuppressLint("NewApi") @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +52,9 @@ public class MainActivity extends Activity {
         button = (Button) findViewById(R.id.button1);
         button2 = (Button) findViewById(R.id.button2);
         button3 = (Button) findViewById(R.id.button3);
-        editText1=(EditText)findViewById(R.id.editText1);
+        btnManageSub=(Button)findViewById(R.id.btnManageSub);
+        		
+        editText1=(EditText)findViewById(R.id.txtMessage);
         editText2=(EditText)findViewById(R.id.editText2);
         editText3=(EditText)findViewById(R.id.editText3);
         button2.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +72,14 @@ public class MainActivity extends Activity {
                 callPublishService();
             }
         });
-        
+        btnManageSub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               
+            	Intent intent = new Intent(view.getContext(), BloodGroupSelection.class);
+            	startActivity(intent);
+            }
+        });
         
         
         updateButton();

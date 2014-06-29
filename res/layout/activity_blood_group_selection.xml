@@ -1,0 +1,98 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.mqtttest2.BloodGroupSelection" >
+
+    <TextView
+        android:id="@+id/lblMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/selection_text" />
+
+    <Button
+        android:id="@+id/btnSubscribe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:text="Subscribe" />
+
+    <CheckBox
+        android:id="@+id/chkAPostive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblMessage"
+        android:layout_marginTop="18dp"
+        android:text="A Postive" />
+
+    <CheckBox
+        android:id="@+id/chkANegative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/chkAPostive"
+        android:layout_alignBottom="@+id/chkAPostive"
+        android:layout_alignRight="@+id/lblMessage"
+        android:layout_marginRight="18dp"
+        android:text="A Negative" />
+
+    <CheckBox
+        android:id="@+id/chkBPositive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/chkAPostive"
+        android:layout_below="@+id/chkAPostive"
+       android:layout_marginTop="22dp"
+        android:text="B Postive" />
+
+    <CheckBox
+        android:id="@+id/chkBNegative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"       
+        android:layout_alignBottom="@+id/chkBPositive"
+        android:layout_alignLeft="@+id/chkANegative"
+        android:layout_marginTop="22dp"
+        android:text="B Negative" />
+
+    <CheckBox
+        android:id="@+id/chkONegative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"       
+        android:layout_alignBottom="@+id/chkOPositive"
+        android:layout_alignLeft="@+id/chkBNegative"
+        android:layout_marginTop="22dp"
+        android:text="O Negative" />
+
+    <CheckBox
+        android:id="@+id/chkOPositive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/chkBPositive"
+        android:layout_below="@+id/chkBPositive"
+        android:layout_marginTop="22dp"
+        android:text="O Postive" />
+
+    <CheckBox
+        android:id="@+id/chkABNegative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/chkONegative"
+        android:layout_below="@+id/chkONegative"
+        android:layout_marginTop="22dp"       
+        android:text="AB Negative" />
+
+    <CheckBox
+        android:id="@+id/chkABPositive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"     
+        android:layout_alignLeft="@+id/chkOPositive"   
+        android:layout_below="@+id/chkOPositive"
+        android:layout_marginTop="22dp"
+        android:text="AB Postive" />
+
+</RelativeLayout>

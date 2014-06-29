@@ -4,5 +4,19 @@
     <string name="app_name">mqtttest2</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
+    <string name="title_activity_blood_group_selection">Select blood groups</string>
+    <string name="selection_text">Please select the blood groups you are interested in</string>
+    <string name="title_activity_message_details">MessageDetails</string>
+     <string-array name="bloodGroups_array">
+         <item>No Selection</item>
+        <item>A Positive</item>
+        <item>A Negative</item>
+        <item>B Positive</item>
+        <item>B Negative</item>
+        <item>O Positive</item>
+        <item>O Negative</item>
+        <item>AB Positive</item>
+        <item>AB Negative</item>
+        <item>Any</item>
+    </string-array>
 </resources>

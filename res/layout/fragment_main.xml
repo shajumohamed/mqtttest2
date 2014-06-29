@@ -9,7 +9,7 @@
     tools:context="com.example.mqtttest2.MainActivity$PlaceholderFragment" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/lblMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
@@ -18,9 +18,9 @@
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/lblMessage"
         android:layout_marginTop="63dp"
-        android:layout_toRightOf="@+id/textView1"
+        android:layout_toRightOf="@+id/lblMessage"
         android:text="Subscribe" />
 
     <Button

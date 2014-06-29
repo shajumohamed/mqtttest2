@@ -10,7 +10,7 @@
     tools:context="com.example.mqtttest2.MainActivity" >
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/txtMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -22,7 +22,7 @@
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText1"
+        android:layout_alignLeft="@+id/txtMessage"
         android:layout_below="@+id/button2"
         android:layout_marginTop="14dp"
         android:ems="10"
@@ -47,14 +47,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/editText1"
+        android:layout_alignRight="@+id/txtMessage"
         android:text="Start Service" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText1"
+        android:layout_below="@+id/txtMessage"
         android:layout_centerHorizontal="true"
         android:text="Subscribe" />
 
@@ -66,6 +66,15 @@
         android:layout_below="@+id/editText3"
         android:layout_marginTop="14dp"
         android:text="Publish" />
+
+    <Button
+        android:id="@+id/btnManageSub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button1"
+        android:layout_below="@+id/button3"
+        android:layout_marginTop="35dp"
+        android:text="Manage Subscriptions" />
 
 </RelativeLayout>
 

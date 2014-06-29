@@ -26,9 +26,9 @@ public class MQTTService extends Service {
 	 static final String TAG="MQTTService";
 	 
 	 //public static final String BROKER_URL = "tcp://broker.mqttdashboard.com:1883";
-	 // public static final String BROKER_URL = "tcp://test.mosquitto.org:1883";
+	  public static final String BROKER_URL = "tcp://test.mosquitto.org:1883";
 	 //public static final String BROKER_URL = "tcp://shajumohamed.com:1883";
-	 public static final String BROKER_URL = "tcp://test.mosca.io:1883";
+	 //public static final String BROKER_URL = "tcp://test.mosca.io:1883";
 
 	    /* In a real application, you should get an Unique Client ID of the device and use this, see
 	    http://android-developers.blogspot.de/2011/03/identifying-app-installations.html */
@@ -95,6 +95,10 @@ public class MQTTService extends Service {
 	 public void subscribetoTopic(String newTopic)
 	 {
 		 try {
+			 if(!mqttClient.isConnected())
+			 {
+				  mqttClient.connect(mqttOptions);	 
+			 }
 			mqttClient.subscribe(newTopic);
 			 Toast.makeText(getApplicationContext(), "Subscribed to " + newTopic, Toast.LENGTH_LONG).show();
 		} catch (MqttSecurityException e) {
@@ -109,13 +113,18 @@ public class MQTTService extends Service {
 	 public void subscribetoBloodGroups(ArrayList<String> subscriptions,ArrayList<String> unSubscriptions)
 	 {
 		 try {
+			 if(!mqttClient.isConnected())
+			 {
+				  mqttClient.connect(mqttOptions);	 
+			 }
 			 for(String sub:subscriptions)
 			 {
-				 mqttClient.subscribe("Allianz/bloodGroups/"+sub); 
+				 mqttClient.subscribe("Allianz/bloodGroups/"+sub,2); 
 				  Log.d(TAG," subscribed to "+"Allianz/bloodGroups/"+sub);
 			 }
 			 for(String unSub:unSubscriptions)
 			 {
+				 mqttClient.unsubscribe("Allianz/bloodGroups/"+unSub);
 				 Log.d(TAG," unsub from "+"Allianz/bloodGroups/"+unSub);
 			 }
 			 
@@ -132,8 +141,12 @@ public class MQTTService extends Service {
 	 
 	 public void publishtoTopic(String topic,String Message)
 	 {
+		 
 		 try {
-			 
+			 if(!mqttClient.isConnected())
+			 {
+				  mqttClient.connect(mqttOptions);	 
+			 }
 			 final MqttTopic temperatureTopic = mqttClient.getTopic(topic);
 
 		        

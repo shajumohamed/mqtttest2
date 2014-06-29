@@ -12,13 +12,18 @@ static final String TAG="NetworkStateReceiver";
 	@Override
 	public void onReceive(Context arg0, Intent arg1) {
 		// TODO Auto-generated method stub
-		
+		 final Intent intent = new Intent(arg0, MQTTService.class);
 		if(isOnline(arg0))
 		{
+			
+			// arg0.startService(intent);
 			Log.d(TAG, "connected");
 		}
 		else
 		{
+			
+			
+			//arg0.stopService(intent);
 			Log.d(TAG, "disconnected");
 		}
 		

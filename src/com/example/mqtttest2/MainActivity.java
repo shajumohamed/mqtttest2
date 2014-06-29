@@ -196,7 +196,7 @@ public void callPublishService(){
     @Override
     protected void onPause() {
       super.onPause();
-      //unbindService(mConnection);
+      unbindService(mConnection);
     }
 
     /**
